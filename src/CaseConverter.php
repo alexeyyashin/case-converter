@@ -7,7 +7,7 @@ class CaseConverter
     {
         $str = preg_replace_callback('/[A-Z][a-z]/', function($m)
         {
-            return '_' . mb_strtolower($m[0]);
+            return '_' . strtolower($m[0]);
         }, $string);
         $str = preg_replace_callback('/([A-Z]{2,})/', function($m)
         {
@@ -30,7 +30,7 @@ class CaseConverter
     {
         $result = array_values(array_map('ucfirst', self::splitWords($string)));
         if ($result) {
-            $result[0] = mb_strtolower($result[0]);
+            $result[0] = strtolower($result[0]);
         }
 
         return implode($result);
@@ -55,7 +55,7 @@ class CaseConverter
      */
     public static function toSnakeCase(string $string): string
     {
-        return mb_strtolower(implode('_', self::splitWords($string)));
+        return strtolower(implode('_', self::splitWords($string)));
     }
 
     /**
@@ -66,7 +66,7 @@ class CaseConverter
      */
     public static function toScreamingSnakeCase(string $string): string
     {
-        return mb_strtoupper(implode('_', self::splitWords($string)));
+        return strtoupper(implode('_', self::splitWords($string)));
     }
 
     /**
@@ -88,7 +88,7 @@ class CaseConverter
      */
     public static function toKebabCase(string $string): string
     {
-        return mb_strtolower(implode('-', self::splitWords($string)));
+        return strtolower(implode('-', self::splitWords($string)));
     }
 
     /**
@@ -99,7 +99,7 @@ class CaseConverter
      */
     public static function toCobolCase(string $string): string
     {
-        return mb_strtoupper(implode('-', self::splitWords($string)));
+        return strtoupper(implode('-', self::splitWords($string)));
     }
 
     /**
@@ -121,7 +121,7 @@ class CaseConverter
      */
     public static function toFlatCase(string $string): string
     {
-        return mb_strtolower(implode(self::splitWords($string)));
+        return strtolower(implode(self::splitWords($string)));
     }
 
     /**
@@ -132,6 +132,6 @@ class CaseConverter
      */
     public static function toUpperFlatCase(string $string): string
     {
-        return mb_strtoupper(implode(self::splitWords($string)));
+        return strtoupper(implode(self::splitWords($string)));
     }
 }
