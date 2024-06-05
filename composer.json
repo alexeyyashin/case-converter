@@ -1,0 +1,16 @@
+{
+    "name": "alexeyyashin/case-converter",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "AlexeyYashin\\CaseConverter\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Alexey Yashin",
+            "email": "me@alexey-yashin.ru"
+        }
+    ]
+}
